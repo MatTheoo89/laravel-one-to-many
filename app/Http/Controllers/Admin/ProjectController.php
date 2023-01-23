@@ -54,7 +54,7 @@ class ProjectController extends Controller
         if(array_key_exists('cover_image',$data)){
 
             // salvo il nome originale
-            $data['image_original_name'] = $request->file('cover_image')->getClientOriginalName();
+            $data['img_original_name'] = $request->file('cover_image')->getClientOriginalName();
             // salvo il file sul filesystem e il path in $post_data['image]
             $data['cover_image'] = Storage::put('uploads', $data['cover_image']);
         }
