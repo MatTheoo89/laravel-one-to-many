@@ -9,13 +9,13 @@
     </div>
     <div class="my-container">
         <table class="table align-middle">
-            @if (empty($projects))
+            @if (!empty($projects))
             <thead>
                 <tr>
                     <th class="text-white text-center" scope="col">ID</th>
                     <th class="text-white text-center" scope="col">image</th>
                     <th class="text-white text-center" scope="col">Name project</th>
-                    <th class="text-white text-center" scope="col">Client name</th>
+                    <th class="text-white text-center" scope="col">Type</th>
                     <th class="text-white text-center" scope="col">summary</th>
                     <th class="text-white text-center" style="width: 175px;" scope="col">AZIONI</th>
                 </tr>
@@ -29,7 +29,10 @@
                             <img src="{{$project->cover_image ? asset('storage/' . $project->cover_image) : 'https://www.pngitem.com/pimgs/m/579-5798581_image-placeholder-circle-hd-png-download.png'}}" alt="{{$project->name}}" class="thumb">
                         </td>
                         <td class="text-white">{{$project->name}}</td>
-                        <td class="text-white">{{$project->client_name}}</td>
+
+                        @dd($project->fx_type)
+
+                        <td class="text-white">{{$project->fx_type->type}}</td>
                         <td class="text-white"> {{$project->summary}}</td>
                         <td class="text-white text-center" style="width: 175px;">
                             <a class="btn btn-info" href="{{route('admin.projects.show', $project)}}"><i class="fa-regular fa-eye"></i></a>

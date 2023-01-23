@@ -20,7 +20,7 @@ class CategoryTableSeeder extends Seeder
 
         foreach ($list_type as $type) {
             $new_type = new Category();
-            $new_type->Type = $type;
+            $new_type->type = $type;
             $new_type->slug = Str::slug($type);
             $new_type->save();
         }
