@@ -30,9 +30,11 @@
                         </td>
                         <td class="text-white">{{$project->name}}</td>
 
-                        @dd($project->fx_type)
+                        {{-- @dd($project->fx_type) --}}
 
-                        <td class="text-white">{{$project->fx_type->type}}</td>
+                        <td class="text-white">
+                            <span class="badge text-bg-info">{{$project->type?->type}}</span>
+                        </td>
                         <td class="text-white"> {{$project->summary}}</td>
                         <td class="text-white text-center" style="width: 175px;">
                             <a class="btn btn-info" href="{{route('admin.projects.show', $project)}}"><i class="fa-regular fa-eye"></i></a>

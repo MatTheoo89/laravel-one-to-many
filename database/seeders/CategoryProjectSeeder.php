@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
+
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -20,7 +21,7 @@ class CategoryProjectSeeder extends Seeder
 
 
         foreach($projects as $project) {
-            $project->type_id = Category::inRandomOrder()->first()->id;
+            $project->type_id = Type::inRandomOrder()->first()->id;
             $project->update();
         }
     }

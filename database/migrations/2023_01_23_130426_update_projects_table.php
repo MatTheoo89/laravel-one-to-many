@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('type_id')->nullable()->after('id');
             $table->foreign('type_id') // la colonna creata qui sopra
                     ->references('id') // riferito a cosa?
-                    ->on('categories') // in quale tabella?
+                    ->on('types') // in quale tabella?
                     ->onDelete('set null'); // quando viene eliminata una categoria viene settato NULL
         });
     }

@@ -51,6 +51,22 @@
                     </div>
                 @enderror
             </div>
+
+            <div class="mb-3">
+                <label for="text" class="form-label">types</label>
+                <select class="form-select" name="type_id" aria-label="Default select example">
+                    <option value="">Selezionare una tipologia</option>
+                    @foreach ($types as $type)
+                        <option
+                        @if($type->id == old('type_id')) selected @endif
+                            value="{{$type->id}}">{{$type->type}}</option>
+                    @endforeach
+                </select>
+    
+            </div>
+
+
+
             <div class="mb-3">
                 <label for="cover_image" class="form-label">Image project *</label>
                 <input  type="file"

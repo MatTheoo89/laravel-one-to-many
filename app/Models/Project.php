@@ -7,14 +7,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+
 class Project extends Model
 {
     use HasFactory;
 
     protected $fillable = ['name', 'type_id', 'client_name', 'slug', 'summary', 'cover_image', 'img_original_name'];
     
-    public function fx_type(){
-        return $this->BelongsTo(Category::class); //richiamo il ONE
+    public function type(){
+        return $this->BelongsTo(Type::class); //richiamo il ONE
     }
 
     public static function generateSlug($string){

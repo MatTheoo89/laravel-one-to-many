@@ -12,6 +12,7 @@
         </div>
         <div class="card-body">
             <h5 class="card-title text-black">{{$project->name}}</h5>
+            <h6 class="card-title text-black">Tipologia: <span class="badge text-white text-bg-info">{{$project->type?->type}}</span></h6>
             <p class="card-text text-black">{{$project->client_name}}</p>
             <p class="card-text text-black">{{$project->summary}}</p>
             
